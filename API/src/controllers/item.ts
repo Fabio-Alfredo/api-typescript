@@ -1,6 +1,6 @@
 import { Request, Response, request } from "express";
 import { handleHttp } from "../utils/error.handle";
-import { insertCar, getCars, getCar } from "../services/item.services";
+import { insertCar, getCars, getCar, updateCar, deleteCar } from "../services/item.services";
 
 const getItem = async ({params}: Request, res: Response) => {
     try {
@@ -32,5 +32,25 @@ const getItems = async (req: Request, res: Response) => {
     }
 }
 
+const updateItem = async ({params, body}:Request, res:Response)=>{
+    try{
+        const {id}=params;
+        const response = await updateCar(id, body);
+        res.send(response);
+    }catch(e){
+        handleHttp(res, "ERROR_UPDATE_ITEM", e);
+    }
+}
 
-export { getItems, getItem, postItem };
+const deleteItem = async ({params}:Request, res:Response)=>{
+    try{
+        const {id}= params
+        const response = await deleteCar(id);
+        res.send(response);
+    }catch(e){
+        handleHttp(res, "ERROR_DELETE_ITEM", e);
+    }
+}
+
+
+export { getItems, getItem, postItem, updateItem, deleteItem };
