@@ -5,9 +5,10 @@ import { logMiddleware } from "../middleware/log";
 const router = Router()
 
 router.get('/', getItems);
-router.post('/', postItem);
 router.get('/:id', logMiddleware,  getItem);
-router.put('/:id',updateItem );
+router.post('/', postItem);
 router.delete('/:id',deleteItem );
+router.put('/:id',updateItem );
+
 
 export { router };
