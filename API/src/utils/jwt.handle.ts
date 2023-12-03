@@ -9,8 +9,9 @@ const signToken = async(id:string)=>{
     return jwt;
 }
 
-const verfyToken =()=>{
-
+const verfyToken =(jwt:string)=>{
+    const isOk = verify(jwt,  JWT_SECRET);
+    return isOk;
 }
 
 export {signToken, verfyToken};

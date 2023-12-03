@@ -1,8 +1,8 @@
-import { Request, Response } from "express"
 import UserModel from "../models/user"
 import { User } from "../interfaces/user.interface";
 import { encrypt, verfied } from "../utils/password.handle";
 import { Auth } from "../interfaces/auth.interface";
+import { signToken } from "../utils/jwt.handle";
 
 const resgisterNewUser = async ({ email, password, name }: User) => {
     const checkIs = await UserModel.findOne({ email });
@@ -19,7 +19,9 @@ const loginUser = async ({email, password}:Auth) => {
     const isCorrect = await verfied(password, passwordHash);
 
     if(!isCorrect) return "CREDENTIALS_INCORRECT";
-    return checkIs;
+    const token = signToken(checkIs.email);
+
+    return token;
 }
 
 export { resgisterNewUser, loginUser }
