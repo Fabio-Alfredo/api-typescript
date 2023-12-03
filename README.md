@@ -31,7 +31,7 @@ The main API endpoints are detailed below:
 ### Get all vehicles
 
 - **Method:** `GET`
-- **Path:** `/items`
+- **Path:** `/item`
 - **Description:** Gets all the notes.
 
 ### Get a vehicle by ID
