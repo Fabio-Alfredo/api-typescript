@@ -20,8 +20,11 @@ const loginUser = async ({email, password}:Auth) => {
 
     if(!isCorrect) return "CREDENTIALS_INCORRECT";
     const token = signToken(checkIs.email);
+    const data = {
+        token
+    }
 
-    return token;
+    return data;
 }
 
 export { resgisterNewUser, loginUser }
