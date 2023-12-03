@@ -1,75 +1,75 @@
 # api-typescript
-Una API para gestionar vehiculos creada con typescript.
+An API to manage vehicles created with typescript.
 
-## Instalación
+## Facility
 
-Asegúrese de tener Node.js y npm instalados. Entonces corre:
+Make sure you have Node.js and npm installed. Then run:
 
 ```bash
-instalación npm
+npm installation
 ```
 
-# configuración
+# setting
 ```
-PUERTO=tu_puerto
-JWT_SECRETA=tu_cueva_de_cifrado
-DB_URI=tu_uri_bd
+PORT=your_port
+JWT_SECRETA=your_encryption_cave
+DB_URI=your_bd_uri
 ```
 
-# Usar
+# Wear
 
-Para iniciar la API, ejecute:
+To start the API, run:
 ```
 npm run dev
 ```
 
 
-# puntos finales
+# endpoints
 
-Los principales endpoints finales de la API se detallan a continuación:
+The main API endpoints are detailed below:
 
-### Obtener todas los vehiculos
+### Get all vehicles
 
-- **Método:** `OBTENER`
-- **Ruta:** `/items`
-- **Descripción:** Obtiene todas las notas.
+- **Method:** `GET`
+- **Path:** `/items`
+- **Description:** Gets all the notes.
 
-### Obtener una vehiculo por ID
+### Get a vehicle by ID
 
-- **Método:** `OBTENER`
-- **Ruta:** `/item/:id`
-- **Descripción:** Obtiene un vehiculo específica para su ID.
+- **Method:** `GET`
+- **Path:** `/item/:id`
+- **Description:** Get a specific vehicle for your ID.
 
-### Crear una nueva vehiculo
+### Create a new vehicle
 
-- **Método:** `POST`
-- **Ruta:** `/item`
-- **Descripción:** Crea un nuevo vehiculo.
+- **Method:** `POST`
+- **Path:** `/item`
+- **Description:** Create a new vehicle.
 
-### Eliminar un vehiculo
+### Delete a vehicle
 
-- **Método:** `BORRAR`
-- **Ruta:** `/item/:id`
-- **Descripción:** Elimina un vehiculo específico por su ID.
+- **Method:** `DELETE`
+- **Path:** `/item/:id`
+- **Description:** Deletes a specific vehicle by its ID.
 
-### Editar informacion del vehiculo
+### Edit vehicle information
 
-- **Método:** `PUT`
-- **Ruta:** `/item/:id`
-- **Descripción:** Cambia la informacion de un vehiculo
+- **Method:** `PUT`
+- **Path:** `/item/:id`
+- **Description:** Change the information of a vehicle
 
-### Crear un nuevo usuario
+### Create a new user
 
-- **Método:** `POST`
-- **Ruta:** `/auth/register`
-- **Descripción:** Crear un nuevo usuario.
+- **Method:** `POST`
+- **Path:** `/auth/register`
+- **Description:** Create a new user.
 
-### Acceso
+### Access
 
-- **Método:** `POST`
-- **Ruta:** `/auth/login`
-- **Descripción:** Inicia sesión y obtén un token de autenticación.
+- **Method:** `POST`
+- **Path:** `/auth/login`
+- **Description:** Sign in and get an authentication token.
 
 
-### Ejemplo de solicitud (usando cURL)
+### Example request (using cURL)
 - **curl http://localhost:3000/items**
